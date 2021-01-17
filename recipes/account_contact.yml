@@ -1,7 +1,9 @@
+- plugin: providers.faker_nonprofit
+
 - object: Account
   fields:
     Name:
-      fake: company
+      fake: nonprofit_name
     BillingStreet:
       fake: street_address
     BillingCity:
