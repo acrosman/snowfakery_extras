@@ -2,6 +2,7 @@
 
 import unittest
 from faker import Faker, Generator
+
 import providers.faker_nonprofit
 
 
