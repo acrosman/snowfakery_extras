@@ -3,7 +3,7 @@
 import unittest
 from faker import Faker, Generator
 
-import providers.faker_nonprofit
+import plugins.faker_nonprofit
 
 
 class IntegrationTestCase(unittest.TestCase):
@@ -11,7 +11,7 @@ class IntegrationTestCase(unittest.TestCase):
 
     def setUp(self):
         self.fake = Faker()
-        self.fake.add_provider(providers.faker_nonprofit.Provider)
+        self.fake.add_provider(plugins.faker_nonprofit.Provider)
 
     def test_integration(self):
         """Test integration with Faker."""
@@ -24,11 +24,11 @@ class NonProfitProviderTestCase(unittest.TestCase):
     """Provider test case."""
 
     def setUp(self):
-        self.provider = providers.faker_nonprofit.Provider(Generator())
+        self.provider = plugins.faker_nonprofit.Provider(Generator())
 
     def test_lists_in_order(self):
         """Test interal values are in order."""
-        for attr_name, attr in providers.faker_nonprofit.__dict__.items():
+        for attr_name, attr in plugins.faker_nonprofit.__dict__.items():
             with self.subTest(attr_name=attr_name):
                 if isinstance(attr, list):
                     self.assert_list_in_order(attr)
@@ -42,7 +42,7 @@ class NonProfitProviderTestCase(unittest.TestCase):
 
     def test_no_duplicates(self):
         """Test value lists don't contain duplicates."""
-        for attr_name, attr in providers.faker_nonprofit.__dict__.items():
+        for attr_name, attr in plugins.faker_nonprofit.__dict__.items():
             with self.subTest(attr_name=attr_name):
                 if isinstance(attr, list):
                     self.assertEqual(len(attr), len(set(attr)))

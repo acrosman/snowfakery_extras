@@ -1,4 +1,4 @@
-- plugin: providers.faker_nonprofit
+- plugin: plugins.faker_nonprofit
 
 - object: Account
   fields:
