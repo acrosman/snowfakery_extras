@@ -1,9 +1,12 @@
 - plugin: snowfakery_extras.faker_nonprofit
+- plugin: snowfakery_extras.snowyPuns
 
 - object: Account
   fields:
     Name:
       fake: nonprofit_name
+    Description:
+      snowyPuns.products
     BillingStreet:
       fake: street_address
     BillingCity:
