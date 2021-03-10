@@ -1,4 +1,4 @@
-- plugin: plugins.faker_nonprofit
+- plugin: snowfakery_extras.faker_nonprofit
 
 - object: Account
   fields:
