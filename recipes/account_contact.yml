@@ -1,5 +1,5 @@
 - plugin: snowfakery_extras.snowyPuns.SnowPunnary
-- plugin: snowfakery_extras.faker_nonprofit
+- plugin: faker_nonprofit.Provider
 
 
 - object: Account
