@@ -1,4 +1,4 @@
-- plugin: snowfakery_extras.snowHelper.SnowPunnary
+- plugin: snowfakery_extras.snowyPuns.SnowPunnary
 - plugin: faker_nonprofit.Provider
 
 
@@ -7,7 +7,7 @@
     Name:
       fake: nonprofit_name
     Description:
-      SnowPunnary.snowPeter: ${{fake.word}}
+      snowyPuns.products
     BillingStreet:
       fake: street_address
     BillingCity:
