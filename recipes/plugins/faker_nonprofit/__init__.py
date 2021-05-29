@@ -20,7 +20,7 @@ TOPICS = [
     'History',
     'Peace',
     'Pets',
-    'Unitiy'
+    'Unity'
 ]
 
 SUFFIXES = [
