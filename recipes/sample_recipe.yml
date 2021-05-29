@@ -1,13 +1,12 @@
 - plugin: snowHelper.SnowPunnary
 - plugin: faker_nonprofit.Provider
 
-
 - object: Account
   fields:
     Name:
       fake: nonprofit_name
-    Description:
-      SnowPunnary.snowPeter: ${{fake.word}}
+    Main_Service__c:
+      SnowPunnary.snowpunner: ${{fake.word}}
     BillingStreet:
       fake: street_address
     BillingCity:
@@ -32,9 +31,9 @@
       fake: phone_number
     RecordType: Organization
   friends:
-    - object: Contact # Add the contact to the household.
-      count: 2 # two person household
-      fields: # Here we're tweaking some details that cam from the macro that aren't what we want.
+    - object: Contact
+      count: 2 # Two people associated with the organization
+      fields:
         AccountId:
           reference: Account
         Salutation:
