@@ -1,0 +1,7 @@
+- plugin: snowHelper.SnowPunnary
+
+- object: Product
+  count: 10
+  fields:
+    Name:
+      SnowPunnary.snowpunner: ${{fake.word}}
