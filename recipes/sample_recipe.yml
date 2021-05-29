@@ -1,4 +1,4 @@
-- plugin: snowfakery_extras.snowHelper.SnowPunnary
+- plugin: snowHelper.SnowPunnary
 - plugin: faker_nonprofit.Provider
 
 
