@@ -1,11 +1,5 @@
 - plugin: faker_highered.Provider
 
-- var: Institution
-  fields:
-    Name:
-      fake: institution_name
-    EmailDomain:
-      fake: institution_email
 - object: Account
   fields:
     Name:
