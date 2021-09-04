@@ -1,0 +1,59 @@
+- plugin: faker_highered.Provider
+
+- var: Institution
+  fields:
+    Name:
+      fake: institution_name
+    EmailDomain:
+      fake: institution_email
+- object: Account
+  fields:
+    Name:
+      fake: institution_name
+    BillingStreet:
+      fake: street_address
+    BillingCity:
+      fake: city
+    BillingState:
+      fake: state
+    BillingPostalCode:
+      fake: postalcode
+    BillingCountry: United States
+    ShippingStreet:
+      fake: street_address
+    ShippingCity:
+      fake: city
+    ShippingState:
+      fake: state
+    ShippingPostalCode:
+      fake: postalcode
+    ShippingCountry: United States
+    Phone:
+      fake: phone_number_dialable
+    Fax:
+      fake: phone_number_dialable
+    RecordType: Organization
+  friends:
+    - object: Contact
+      count: 2 # Two people associated with the organization
+      fields:
+        AccountId:
+          reference: Account
+        Salutation:
+          fake: prefix
+        FirstName:
+          fake: first_name
+        LastName:
+          fake: last_name
+        Email:
+          fake: email
+        Phone:
+          fake: phone_number_dialable
+        MobilePhone:
+          fake: phone_number_dialable
+        Title:
+          fake: faculty_title
+        Birthdate:
+          fake.date_between:
+            start_date: -50y
+            end_date: -20y

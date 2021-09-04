@@ -1,22 +1,6 @@
-"""Tests for faker-highered provider."""
-
 import unittest
-from faker import Faker, Generator
-
-
-
-class IntegrationTestCase(unittest.TestCase):
-    """Integration tests."""
-
-    def setUp(self):
-        self.fake = Faker()
-        self.fake.add_provider(faker_highered.Provider)
-
-    def test_integration(self):
-        """Test integration with Faker."""
-        result = self.fake.nonprofit_name()
-        self.assertIsInstance(result, str)
-        self.assertGreater(len(result), 1)
+from faker.generator import Generator
+import faker_highered
 
 
 class HigheredProviderTestCase(unittest.TestCase):
@@ -27,7 +11,7 @@ class HigheredProviderTestCase(unittest.TestCase):
 
     def test_lists_in_order(self):
         """Test interal values are in order."""
-        for attr_name, attr in faker_highered.__dict__.items():
+        for attr_name, attr in self.__dict__.items():
             with self.subTest(attr_name=attr_name):
                 if isinstance(attr, list):
                     self.assert_list_in_order(attr)
@@ -41,14 +25,14 @@ class HigheredProviderTestCase(unittest.TestCase):
 
     def test_no_duplicates(self):
         """Test value lists don't contain duplicates."""
-        for attr_name, attr in faker_highered.__dict__.items():
+        for attr_name, attr in self.__dict__.items():
             with self.subTest(attr_name=attr_name):
                 if isinstance(attr, list):
                     self.assertEqual(len(attr), len(set(attr)))
 
     def test_words(self):
         """Test that generated string is at least two words long."""
-        name = self.provider.nonprofit_name()
+        name = self.provider.institution_name()
         word_count = len(name.split())
         self.assertGreaterEqual(word_count, 2)
 
