@@ -1,13 +1,13 @@
 # Snowfakery Extras
 
-This is a collection of sample code and directions for creating plugins and providers for Snowfakery.
+This is a collection of sample code and directions for creating plugins and providers for Snowfakery. I have a blog post that explain how to [create Snowfakery plugins](https://spinningcode.org/2021/05/snowfakery-custom-plugins-part-1/) in more detail.
 
 ## Things you'll need
 
 1. Python 3 (generally recent-ish version).
 2. Snowfakery 1.9 or later.
 3. Faker module for python (`pip3 install Faker`).
-    1. A Faker sample community provider like [Microservice](https://github.com/craiga/faker-microservice): `pip3 install faker-microservice`
+   1. A Faker sample community provider like [Microservice](https://github.com/craiga/faker-microservice): `pip3 install faker-microservice`
 4. A recipe to work from (see recipes folder).
 
 ## Creating a fakery provider for Snowfakery
@@ -17,10 +17,10 @@ This is a collection of sample code and directions for creating plugins and prov
 3. Create directory for your new provider with the pattern `faker_[my_service_name]`, in my case `faker_nonprofit`.
 4. In the directory create a file named `__init__.py` this defines the faker provider module.
 5. Create your provider in that file (see example for details):
-    1. `import faker.providers` to make sure you have required classes.
-    2. Define a series of dictionaries for providers creating text.
-    3. Create a class that extends the base: `class Provider(faker.providers.BaseProvider):`
-    4. Define a method that returns the desired values: `def nonprofit_name(self):`
+   1. `import faker.providers` to make sure you have required classes.
+   2. Define a series of dictionaries for providers creating text.
+   3. Create a class that extends the base: `class Provider(faker.providers.BaseProvider):`
+   4. Define a method that returns the desired values: `def nonprofit_name(self):`
 6. Create `test.py` in your `plugins` directory.
 7. Add tests to make sure it works cause it helps keep life easy (see example): `$ python -m plugins.test`
 
