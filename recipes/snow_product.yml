@@ -5,3 +5,5 @@
   fields:
     Name:
       SnowPunnary.snowpunner: ${{fake.word}}
+    Index:
+      ${{SnowPunnary.currentCounter()}}
